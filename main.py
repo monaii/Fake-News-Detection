@@ -59,17 +59,20 @@ def main():
     # Logistic Regression
     print("🤖 Training Logistic Regression...")
     lr_model = LogisticModel()
-    models['Logistic Regression'] = lr_model.train(X_train, y_train)
+    lr_model.train(X_train, y_train)
+    models['Logistic Regression'] = lr_model
     
     # SVM
     print("🤖 Training SVM...")
     svm_model = SVMModel()
-    models['SVM'] = svm_model.train(X_train, y_train)
+    svm_model.train(X_train, y_train)
+    models['SVM'] = svm_model
     
     # LSTM (requires different data preparation)
     print("🤖 Training LSTM...")
     lstm_model = LSTMModel()
-    models['LSTM'] = lstm_model.train(df['cleaned_text'], df['label'])
+    lstm_model.train(df['cleaned_text'], df['label'])
+    models['LSTM'] = lstm_model
     
     # Step 7: Evaluate Models
     print("📈 Evaluating models...")
