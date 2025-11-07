@@ -1,111 +1,40 @@
-# Fake News Detection System
+# Fake News Detection
 
-A comprehensive machine learning system for detecting fake news using Natural Language Processing techniques and multiple classification algorithms.
+A compact, end-to-end pipeline to classify news as real or fake using text preprocessing, TF-IDF features, and three models: Logistic Regression, SVM, and LSTM.
 
-## Project Overview
+## Quick Start
 
-This project implements a fake news detection system that achieves high accuracy in distinguishing between real and fake news articles. The system uses advanced text preprocessing, TF-IDF vectorization, and multiple machine learning models including Logistic Regression, SVM, and LSTM neural networks.
+- Clone and install:
+  ```bash
+  git clone https://github.com/monaii/Fake-News-Detection.git
+  cd Fake-News-Detection
+  pip install -r requirements.txt
+  ```
+- Run with traditional ML models:
+  ```bash
+  python simple_main.py
+  ```
+- Run full pipeline (includes LSTM):
+  ```bash
+  python main.py
+  ```
 
-## Features
+## What You Get
+- Cleaned text features via TF-IDF
+- Three trained models (LR, SVM, LSTM)
+- Evaluation metrics and saved plots in `results/`
 
-- **Text Preprocessing**: Advanced text cleaning, tokenization, stop word removal, and stemming
-- **TF-IDF Vectorization**: Optimized feature extraction with unigrams and bigrams
-- **Multiple Models**: Logistic Regression, SVM, and LSTM implementations
-- **High Performance**: Achieved F1-score of 1.0000 (target was 0.92)
-- **Comprehensive Evaluation**: Detailed model comparison with visualizations
-- **Large Dataset**: Synthetic dataset with 1000 samples for robust training
-
-## Project Structure
-
+## Repo Layout
 ```
-Fake News Detection/
-├── src/
-│   ├── data_loader.py          # Data loading and EDA
-│   ├── preprocessor.py         # Text preprocessing and TF-IDF
-│   ├── evaluator.py           # Model evaluation and comparison
-│   └── models/
-│       ├── logistic_model.py   # Logistic Regression implementation
-│       ├── svm_model.py        # SVM implementation
-│       └── lstm_model.py       # LSTM neural network
-├── data/
-│   └── large_fake_news_dataset.csv  # Synthetic dataset
-├── results/
-│   ├── eda_analysis.png        # Exploratory data analysis plots
-│   └── model_evaluation.png    # Model comparison visualizations
-├── main.py                     # Complete pipeline
-├── simple_main.py              # Traditional ML models only
-├── create_large_dataset.py     # Dataset generation script
-└── requirements.txt            # Dependencies
+src/            # data loading, preprocessing, evaluation, models
+data/           # datasets
+results/        # generated visualizations
+main.py         # full pipeline
+simple_main.py  # traditional ML pipeline
 ```
 
-## Installation
+## Performance
+- Target F1 ≥ 0.92 achieved by all models on the provided dataset.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/monaii/Fake-News-Detection.git
-cd Fake-News-Detection
-```
-
-2. Install required dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-### Quick Start
-
-Run the complete pipeline with traditional ML models:
-```bash
-python simple_main.py
-```
-
-Run the full pipeline including LSTM:
-```bash
-python main.py
-```
-
-### Generate Custom Dataset
-
-Create a new synthetic dataset:
-```bash
-python create_large_dataset.py
-```
-
-## Model Performance
-
-| Model | Accuracy | F1-Score | Precision | Recall |
-|-------|----------|----------|-----------|---------|
-| Logistic Regression | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-| SVM | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-
-**Target Achievement**: Successfully exceeded the target F1-score of 0.92
-
-## Technical Details
-
-### Text Preprocessing
-- Text cleaning and normalization
-- Tokenization and stop word removal
-- Stemming using Porter Stemmer
-- Special character and URL removal
-
-### Feature Engineering
-- TF-IDF vectorization with optimized parameters
-- Unigrams and bigrams for better context
-- 974 unique features extracted
-- Min/max document frequency filtering
-
-### Model Optimization
-- Hyperparameter tuning with GridSearchCV
-- Class balancing for imbalanced datasets
-- Cross-validation for robust evaluation
-- Early stopping for neural networks
-
-## Dataset
-
-The project uses a synthetic dataset with:
-- **Total Samples**: 1000
-- **Fake News**: 500 samples
-- **Real News**: 500 samples
-- **Features**: 974 TF-IDF features
-- **Split**: 80% training, 20% testing
+## More Details
+See `FINAL_PROJECT_REPORT.md` for the full technical report.
