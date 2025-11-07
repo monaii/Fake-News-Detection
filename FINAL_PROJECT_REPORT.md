@@ -146,7 +146,7 @@ The fake news detection system successfully demonstrates the effectiveness of mu
 
 ## Project Completion Status
 
-✅ **COMPLETED**: All project objectives achieved
+**COMPLETED**: All project objectives achieved
 - Target F1-score (0.92) exceeded with perfect scores (1.0000)
 - Complete pipeline implemented and tested
 - Comprehensive documentation provided
